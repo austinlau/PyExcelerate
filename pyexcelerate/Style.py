@@ -113,7 +113,7 @@ class Style(object):
         if not self._borders is None:
             tag.append('applyBorder="1" borderId="%d"' % (self._borders.id))
         if not self._quote_prefix is None:
-            tag.append('quotePrefix="1"')
+            tag.append('quotePrefix="%d"' % (1 if self._quote_prefix else 0))
         if self._alignment is None:
             return '<xf xfId="0" %s/>' % (" ".join(tag))
         else:
